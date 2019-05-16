@@ -48,7 +48,11 @@ $uwpRubbishApps = @(
     "Microsoft.YourPhone",
     "Microsoft.MicrosoftOfficeHub",
     "Fitbit.FitbitCoach",
-    "4DF9E0F8.Netflix")
+    "4DF9E0F8.Netflix",
+    "Microsoft.MixedReality.Portal",
+    "Microsoft.SkypeApp",
+    "Microsoft.Print3D"
+    )
 
 foreach ($uwp in $uwpRubbishApps) {
     Get-AppxPackage -Name $uwp | Remove-AppxPackage
