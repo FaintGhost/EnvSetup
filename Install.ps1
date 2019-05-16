@@ -69,7 +69,7 @@ Write-Host "Installing Applications..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Write-Host "[WARN]in China: some software like Google Chrome require the true Internet first" -ForegroundColor Yellow
 
-choco install $PSScriptRoot/packages.config
+choco install $PSScriptRoot/packages.config -y
 
 Write-Host "------------------------------------" -ForegroundColor Green
 Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
