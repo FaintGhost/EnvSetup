@@ -1,14 +1,14 @@
 # Windows 10 开发环境自动配置
 [English Version](https://github.com/FaintGhost/EnvSetup/edit/master/README_EN.md)
 
-该脚本fork自Edi Wang用来快速配置一个全新的开发环境. 您可以修改脚本以满足您自己的需求。
+该脚本fork自Edi Wang，用来快速配置一个全新的开发环境，您可以修改脚本以满足您自己的需求。
 
 ## 前置条件
 
 - 全新安装的 Windows 10 专业版 1903
-- 如果你在中国，“稳定”的网络连接
+- 如果你在中国,"稳定"的网络连接
 
-> 该脚本没有的其他版本的Windows上测试过, 如果您在其他Windows版本上使用它风险自负
+> 该脚本没有在其他版本的Windows上测试过, 如果您在其他Windows版本上使用请自担风险。
 
 ## 如何使用
 
@@ -28,14 +28,14 @@
     - TeamViewer
     - Notepad++
     - Visual Studio Code
-	- jdk8
-	- intellijidea-ultimate
+    - jdk8
+    - intellijidea-ultimate
     - Git
-	- dejavufonts
-	- python
-	- tim
-	- dropbox
-	- nextcloud-client
+    - dejavufonts
+    - python
+    - tim
+    - dropbox
+    - nextcloud-client
 - 卸载一些预载的UWP应用
     - Messaging
     - CandyCrush
