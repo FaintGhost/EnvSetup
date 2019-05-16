@@ -21,7 +21,7 @@ Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context men
 - Disable Sleep on AC Power
 - Add 'This PC' Desktop Icon (need refresh desktop)
 - Remove "Microsoft Edge" desktop shortcut icon
-- Install Chocolate for Windows
+- Install Chocolatey for Windows (Use the packages.config file here to configure the software you need to install and the specified version number)
     - Google Chrome
     - Pot Player
     - TeamViewer
