@@ -50,8 +50,7 @@ $uwpRubbishApps = @(
     "Fitbit.FitbitCoach",
     "4DF9E0F8.Netflix",
     "Microsoft.MixedReality.Portal",
-    "Microsoft.SkypeApp",
-    "Microsoft.Print3D"
+    "Microsoft.SkypeApp"
     )
 
 foreach ($uwp in $uwpRubbishApps) {
