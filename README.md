@@ -1,6 +1,6 @@
 # Windows 10 Developer Machine Setup
 
-This is the script for Edi Wang to setup a new dev box. You can modify the scripts to fit your own requirements.
+This is the script forked from Edi Wang to setup a new dev box. You can modify the scripts to fit your own requirements.
 
 ## Prerequisites
 
@@ -21,41 +21,20 @@ Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context men
 - Disable Sleep on AC Power
 - Add 'This PC' Desktop Icon (need refresh desktop)
 - Remove "Microsoft Edge" desktop shortcut icon
-- Enable Developer Mode (for UWP Development)
-- Enable Remote Desktop
-- Install IIS
-  - ASP.NET 4.8
-  - Dynamic and Static Compression
-  - Basic Authentication
-  - Windows Authentication
-  - Server Side Includes
-  - WebSockets
 - Install Chocolate for Windows
-    - 7-Zip
     - Google Chrome
     - Pot Player
-    - Microsoft Teams
-    - SysInternals
-    - Lightshot
-    - FileZilla
     - TeamViewer
     - Notepad++
     - Visual Studio Code
-        - C-Sharp
-        - Icons
-        - MSSQL
-        - PowerShell
-    - DotPeek
-    - LINQPad
-    - Fiddler
+	- jdk8
+	- intellijidea-ultimate
     - Git
-    - GitHub for Windows
-    - FFMpeg
-    - CURL
-    - WGet
-    - OpenSSL
-    - Beyond Compare
-    - Node.Js
+	- dejavufonts
+	- python
+	- tim
+	- dropbox
+	- nextcloud-client
 - Remove a few pre-installed UWP applications
     - Messaging
     - CandyCrush

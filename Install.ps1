@@ -53,31 +53,6 @@ $uwpRubbishApps = @(
 foreach ($uwp in $uwpRubbishApps) {
     Get-AppxPackage -Name $uwp | Remove-AppxPackage
 }
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Installing IIS..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-DefaultDocument -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpCompressionDynamic -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpCompressionStatic -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebSockets -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-ApplicationInit -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET45 -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-ServerSideIncludes
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-BasicAuthentication
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-WindowsAuthentication
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Enable Windows 10 Developer Mode..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Enable Remote Desktop..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\" -Name "fDenyTSConnections" -Value 0
-Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\" -Name "UserAuthentication" -Value 1
-Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
 if (Check-Command -cmdname 'choco') {
     Write-Host "Choco is already installed, skip installation."
@@ -94,50 +69,7 @@ Write-Host "Installing Applications..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Write-Host "[WARN] Ma de in China: some software like Google Chrome require the true Internet first" -ForegroundColor Yellow
 
-if (Check-Command -cmdname 'git') {
-    Write-Host "Git is already installed, checking new version..."
-    choco update git -y
-}
-else {
-    Write-Host ""
-    Write-Host "Installing Git for Windows..." -ForegroundColor Green
-    choco install git -y
-}
-
-if (Check-Command -cmdname 'node') {
-    Write-Host "Node.js is already installed, checking new version..."
-    choco update nodejs -y
-}
-else {
-    Write-Host ""
-    Write-Host "Installing Node.js..." -ForegroundColor Green
-    choco install nodejs -y
-}
-
-choco install 7zip.install -y
-choco install googlechrome -y
-choco install potplayer -y
-choco install dotnetcore-sdk -y
-choco install ffmpeg -y
-choco install curl -y
-choco install wget -y
-choco install openssl.light -y
-choco install vscode -y
-choco install vscode-csharp -y
-choco install vscode-icons -y
-choco install vscode-mssql -y
-choco install vscode-powershell -y
-choco install sysinternals -y
-choco install notepadplusplus.install -y
-choco install dotpeek -y
-choco install linqpad -y
-choco install fiddler -y
-choco install beyondcompare -y
-choco install filezilla -y
-choco install lightshot.install -y
-choco install microsoft-teams.install -y
-choco install teamviewer -y
-choco install github-desktop -y
+choco install $PSScriptRoot/package.config
 
 Write-Host "------------------------------------" -ForegroundColor Green
 Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
