@@ -1,5 +1,5 @@
 # Windows 10 开发环境自动配置
-[English Version]https://github.com/FaintGhost/EnvSetup/edit/master/README_EN.md
+[English Version](https://github.com/FaintGhost/EnvSetup/edit/master/README_EN.md)
 该脚本fork自Edi Wang用来快速配置一个全新的开发环境. 您可以修改脚本以满足您自己的需求。
 
 ## 前置条件
