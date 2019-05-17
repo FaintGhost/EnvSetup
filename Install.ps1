@@ -56,7 +56,7 @@ $uwpRubbishApps = @(
 foreach ($uwp in $uwpRubbishApps) {
     Get-AppxPackage -Name $uwp | Remove-AppxPackage
 }
-
+# -----------------------------------------------------------------------------
 if (Check-Command -cmdname 'choco') {
     Write-Host "Choco is already installed, skip installation."
 }
@@ -73,7 +73,32 @@ Write-Host "------------------------------------" -ForegroundColor Green
 Write-Host "[WARN]in China: some software like Google Chrome require the true Internet first" -ForegroundColor Yellow
 
 choco install $PSScriptRoot/packages.config -y
+# -----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "Installing Sarasa fonts" -ForegroundColor Green
+Write-Host "------------------------------------" -ForegroundColor Green
+$FONTS = 0x14; 
 
+$FromPath = "$PSScriptRoot/fonts"; 
+
+$ObjShell = New-Object -ComObject Shell.Application; 
+$ObjFolder = $ObjShell.Namespace($FONTS); 
+
+$CopyOptions = 4 + 16; 
+$CopyFlag = [String]::Format("{0:x}", $CopyOptions); 
+
+foreach($File in $(Get-ChildItem -Path $FromPath -Include *.ttf -Recurse)){ 
+    If (Test-Path "c:\windows\fonts\$($File.name)")  
+    { } 
+    Else
+    { 
+     $CopyFlag = [String]::Format("{0:x}", $CopyOptions); 
+     $ObjFolder.CopyHere($File.fullname, $CopyOptions); 
+
+     New-ItemProperty -Name $File.fullname -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $File 
+    }
+} 
+# -----------------------------------------------------------------------------
 Write-Host "------------------------------------" -ForegroundColor Green
 Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
 Restart-Computer
