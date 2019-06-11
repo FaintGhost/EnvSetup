@@ -22,20 +22,6 @@
 - 接入外部电源时永不睡眠
 - 在桌面添加“此电脑”图标 (需要刷新桌面)
 - 从桌面删除"Microsoft Edge"快捷方式
-- 为Windows安装Chocolatey (这里使用packages.config文件来配置所需要安装的软件及指定版本号）
-    - Google Chrome
-    - Pot Player
-    - TeamViewer
-    - Notepad++
-    - Visual Studio Code
-    - jdk8
-    - intellijidea-ultimate
-    - Git
-    - dejavufonts
-    - python
-    - tim
-    - dropbox
-    - nextcloud-client
 - 卸载一些预载的UWP应用
     - Messaging
     - CandyCrush
@@ -47,3 +33,16 @@
     - My Office
     - FitbitCoach
     - Netflix
+- 为Windows安装Chocolatey (这里使用packages.config文件来配置所需要安装的软件及指定版本号）
+    - Google Chrome
+    - Pot Player
+    - TeamViewer
+    - Notepad++
+    - Visual Studio Code
+    - jdk8
+    - intellijidea-ultimate
+    - Git
+    - dejavufonts
+    - python3
+    - tim
+    - dropbox
