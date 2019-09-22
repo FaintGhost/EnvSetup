@@ -34,15 +34,18 @@
     - FitbitCoach
     - Netflix
 - 为Windows安装Chocolatey (这里使用packages.config文件来配置所需要安装的软件及指定版本号）
-    - Google Chrome
-    - Pot Player
     - TeamViewer
-    - Notepad++
-    - Visual Studio Code
+    - Google Chrome
+    - VS Code
+    - git
+    - node.js
     - jdk8
-    - intellijidea-ultimate
-    - Git
-    - dejavufonts
     - python3
-    - tim
+    - pycharm
+    - clion-ide
+    - intellijidea-ultimate
+    - PotPlayer
     - dropbox
+    - typora
+    - steam    
+    - dejavufonts
