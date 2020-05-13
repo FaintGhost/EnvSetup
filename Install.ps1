@@ -50,13 +50,21 @@ $uwpRubbishApps = @(
     "Fitbit.FitbitCoach",
     "4DF9E0F8.Netflix",
     "Microsoft.MixedReality.Portal",
-    "Microsoft.SkypeApp"
+    "Microsoft.SkypeApp",
+    "Microsoft.GetHelp"
     )
 
 foreach ($uwp in $uwpRubbishApps) {
     Get-AppxPackage -Name $uwp | Remove-AppxPackage
 }
 # -----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "Enable Remote Desktop..." -ForegroundColor Green
+Write-Host "------------------------------------" -ForegroundColor Green
+Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\" -Name "fDenyTSConnections" -Value 0
+Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\" -Name "UserAuthentication" -Value 1
+Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+
 if (Check-Command -cmdname 'choco') {
     Write-Host "Choco is already installed, skip installation."
 }
